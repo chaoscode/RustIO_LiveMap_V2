@@ -77,41 +77,44 @@ namespace WindowsFormsApplication6.Managers
 
             HelperClass HelpMgr = new HelperClass();
 
-            OutPut.AppendText(Environment.NewLine + "Total World Monumnets:" + Monumentlst.Count.ToString());
+            if (Monumentlst != null)
+                { 
+                    OutPut.AppendText(Environment.NewLine + "Total World Monumnets:" + Monumentlst.Count.ToString());
 
-            foreach (Models.world.Monument Monument in Monumentlst)
-            {
+                    foreach (Models.world.Monument Monument in Monumentlst)
+                    {
 
-                // Output the load of image
-                OutPut.AppendText(Environment.NewLine + "Attempting to draw [" + Monument.name + "]: " + Monument.displayName);
+                        // Output the load of image
+                        OutPut.AppendText(Environment.NewLine + "Attempting to draw [" + Monument.name + "]: " + Monument.displayName);
 
-                string ImgPath = BuildMonumentsImagePath(Monument);
-                Image ObjectImg = null;
+                        string ImgPath = BuildMonumentsImagePath(Monument);
+                        Image ObjectImg = null;
 
-                // Check if image is cached
-                if (File.Exists("." + ImgPath))
-                {
-                    // Load file from cache
-                    ObjectImg = Image.FromFile("." + ImgPath);
-                } else
-                {
+                        // Check if image is cached
+                        if (File.Exists("." + ImgPath))
+                        {
+                            // Load file from cache
+                            ObjectImg = Image.FromFile("." + ImgPath);
+                        } else
+                        {
 
-                    // Try to get image for object
-                    ObjectImg = GetImage(RustIOServer, "80", BuildMonumentsImagePath(Monument));
+                            // Try to get image for object
+                            ObjectImg = GetImage(RustIOServer, "80", BuildMonumentsImagePath(Monument));
 
-                    // Cache Image
-                    ObjectImg.Save("." + ImgPath);
-                }
+                            // Cache Image
+                            ObjectImg.Save("." + ImgPath);
+                        }
                 
-                // Make sure its not null
-                if (ObjectImg != null)
-                {
+                        // Make sure its not null
+                        if (ObjectImg != null)
+                        {
 
-                    // Draw Monuments
-                    MapImg = DrawMonument(Monument, ObjectImg, MapImg, ServerStatus);
+                            // Draw Monuments
+                            MapImg = DrawMonument(Monument, ObjectImg, MapImg, ServerStatus);
+                        }
+
+                    }
                 }
-
-            }
 
             return MapImg;
         }

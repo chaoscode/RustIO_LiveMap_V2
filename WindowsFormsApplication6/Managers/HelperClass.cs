@@ -115,7 +115,7 @@ namespace WindowsFormsApplication6.Managers
 
                 webRequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip;
                 webRequest.AllowWriteStreamBuffering = true;
-                webRequest.Timeout = 30000;
+                webRequest.Timeout = 1000;
                 webRequest.Referer = GetFakeReferer(ServerName, ServerPort);
                 webRequest.Headers.Add("sid", sid);
 

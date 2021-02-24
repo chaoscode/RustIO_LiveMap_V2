@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using System.Net.WebSockets;
 using System.Threading;
 using System.IO;
-using Newtonsoft.Json;
 using System.Net;
 
 namespace WindowsFormsApplication6
