@@ -42,7 +42,7 @@
             this.ServerPortBox.Name = "ServerPortBox";
             this.ServerPortBox.Size = new System.Drawing.Size(59, 20);
             this.ServerPortBox.TabIndex = 11;
-            this.ServerPortBox.Text = "28016";
+            this.ServerPortBox.Text = "28025";
             // 
             // label2
             // 
@@ -59,7 +59,7 @@
             this.ServerNameBox.Name = "ServerNameBox";
             this.ServerNameBox.Size = new System.Drawing.Size(130, 20);
             this.ServerNameBox.TabIndex = 9;
-            this.ServerNameBox.Text = "108.61.120.168";
+            this.ServerNameBox.Text = "185.38.148.136";
             // 
             // OkButton
             // 

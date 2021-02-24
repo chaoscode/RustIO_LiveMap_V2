@@ -69,7 +69,7 @@
             // 
             this.MapImg.Location = new System.Drawing.Point(373, 28);
             this.MapImg.Name = "MapImg";
-            this.MapImg.Size = new System.Drawing.Size(1061, 952);
+            this.MapImg.Size = new System.Drawing.Size(1159, 952);
             this.MapImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.MapImg.TabIndex = 9;
             this.MapImg.TabStop = false;
@@ -106,7 +106,7 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1437, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1534, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -155,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1437, 984);
+            this.ClientSize = new System.Drawing.Size(1534, 984);
             this.Controls.Add(this.SendButton);
             this.Controls.Add(this.SendBox);
             this.Controls.Add(this.ConnectButton);
