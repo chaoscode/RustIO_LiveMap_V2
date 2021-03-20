@@ -21,5 +21,11 @@ namespace WindowsFormsApplication6
         {
             this.Hide();
         }
+
+        private void Settings_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Settings.ActiveForm.Hide();
+            e.Cancel = true;
+        }
     }
 }

@@ -129,7 +129,7 @@ namespace WindowsFormsApplication6.Managers
 
                 return text;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -159,7 +159,7 @@ namespace WindowsFormsApplication6.Managers
 
                 return image;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

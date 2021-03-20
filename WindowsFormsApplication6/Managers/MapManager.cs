@@ -64,9 +64,9 @@ namespace WindowsFormsApplication6.Managers
 
                 return image;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+               
             }
 
             return null;

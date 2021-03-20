@@ -74,25 +74,18 @@ namespace WindowsFormsApplication6
             return builder.ToString();
         }
 
-        private void NukeMap()
+        private string RandomCharacters(int size)
         {
-            try
+            StringBuilder builder = new StringBuilder();
+            Random random = new Random();
+            char ch;
+            for (int i = 0; i < size; i++)
             {
-                var uri = "ws://" + SettingsForm.ServerNameBox.Text + ":" + SettingsForm.ServerPortBox.Text + "/ms";
-                int Count = 4098;
-                for (int i = 0; i <= Count; i++)
-                {
-                    string OutText = "hello " + RandomString(2000);
-                    WSArray.Add(new ClientWebSocket());
-                    WSArray[i].ConnectAsync(new Uri(uri), cts.Token);
-                    Task.WhenAll(Receive(WSArray[i]), Send(WSArray[i], OutText));
-                }
+                ch = Convert.ToChar(Convert.ToInt32(Math.Floor(255 * random.NextDouble())));
+                builder.Append(ch);
+            }
 
-            }
-            catch (Exception ex)
-            {
-                OutPut.AppendText("Error: " + ex.Message);
-            }
+            return builder.ToString();
         }
 
         private void wsGreet()
@@ -128,7 +121,7 @@ namespace WindowsFormsApplication6
             }
             catch (Exception ex)
             {
-                OutPut.AppendText("Error: " + ex.Message);
+                OutPut.AppendText("Error: " + ex.Message + Environment.NewLine);
             }
         }
 
@@ -165,23 +158,27 @@ namespace WindowsFormsApplication6
             }
             catch (Exception ex)
             {
-                OutPut.AppendText("Error: " + ex.Message);
+                OutPut.AppendText("Error: " + ex.Message + Environment.NewLine);
             }
         }
 
         public void OutPutPingServer()
         {
-           
+           if (Status != null)
+            { 
             OutPut.AppendText(
                 "   Server is UP" + Environment.NewLine +
-                "   CurrentVersion: " + Status.version +
-                "   CurrentTime: " + Status.env.time +
+                "   CurrentVersion: " + Status.version.io + Environment.NewLine +
+                "   CurrentTime: " + Status.env.time + Environment.NewLine +
                 "   Players: " + Status.players + " / " + Status.maxplayers + Environment.NewLine +
                 "   Sleepers: " + Status.sleepers + Environment.NewLine +
                 "   Level:" + Status.level + Environment.NewLine +
                 "   World Size: " + Status.world.size + Environment.NewLine +
-                "   World Seed:" + Status.world.seed + Environment.NewLine);    
-           
+                "   World Seed:" + Status.world.seed + Environment.NewLine);
+            } else
+            {
+                OutPut.AppendText("   Server is not responding" + Environment.NewLine);
+            }
         }
 
         public async Task Receive(ClientWebSocket webSocket)

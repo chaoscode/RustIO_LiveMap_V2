@@ -59,7 +59,7 @@
             this.ServerNameBox.Name = "ServerNameBox";
             this.ServerNameBox.Size = new System.Drawing.Size(130, 20);
             this.ServerNameBox.TabIndex = 9;
-            this.ServerNameBox.Text = "185.38.148.136";
+            this.ServerNameBox.Text = "104.217.250.202";
             // 
             // OkButton
             // 
@@ -100,7 +100,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ServerNameBox);
             this.Name = "Settings";
-            this.Text = "Form2";
+            this.Text = "Settings";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Settings_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
